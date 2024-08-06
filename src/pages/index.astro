@@ -1,0 +1,148 @@
+---
+import "@fontsource/inter";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
+import "@fontsource/inter/900.css";
+
+import BaseHead from "../components/BaseHead.astro";
+import NewsletterButton from "../components/newsletter.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<div class="landing h-screen flex flex-col">
+			<nav
+				class="sticky top-0 flex justify-center gap-8 py-6 text-lg text-primary backdrop-blur-lg z-50"
+			>
+				<div class="hover:text-white duration-200">Home</div>
+				<div class="hover:text-white duration-200">About</div>
+				<div class="hover:text-white duration-200">Services</div>
+				<div class="hover:text-white duration-200">Blog</div>
+				<div class="hover:text-white duration-200">Contact</div>
+			</nav>
+
+			<div class="hero grow flex container mx-auto">
+				
+				<div class="self-center w-1/2 ml-auto">
+					<div class="text-white text-6xl  animate-appear opacity-0">Leading the future</div>
+					<div class="text-accent text-6xl  animate-appear200 opacity-0">of AI Innovation</div>
+					<p class="text-lg mt-4 leading-relaxed text-balance  animate-appear400 opacity-0">
+						Transforming Businesses with Innovative AI Technologies for enhanced
+						efficiency, security, and productivity.
+					</p>
+
+					
+					<button
+						id="open-popup-btn"
+						class="mt-6 bg-accent text-black font-bold rounded-lg 
+						w-64 sm:w-52 h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0
+					hover:bg-accentlight duration-200 text-lg animate-appear600 opacity-0"
+					>
+						Join our newsletter
+					</button>
+				</div>
+
+				<header class="py-4 self-center mr-auto">
+					<div class="font-logo text-9xl logo text-white animate-appear200 opacity-0">
+						N<span class="text-accent">X</span>Z
+					</div>
+				</header>
+
+			</div>
+		</div>
+
+		<!-- <div class="products container mx-auto">
+			<div>
+				<div class="w-2/5">
+					<div class="text-5xl font-bold text-white mb-6">
+						AI Guardrails - Secure Your AI Implementations
+					</div>
+					<p class="mb-6 leading-loose">
+						A robust solution designed to ensure the safe and ethical use of AI.
+						Helps prevent risks of harmful content, unauthorized AI
+						manipulations, and prompt injections, while also safeguarding
+						sensitive information through data anonymization.
+					</p>
+				</div>
+
+				<div>
+					<ul class="mb-6 text-white checklist">
+						<li>Moderates and filters inappropriate content</li>
+						<li>Shields against Adversarial attacks</li>
+						<li>Ensures sensitive data remains anonymous</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	-->
+		<footer class="p-4 bg-zinc-900">
+			<div
+				class="container mx-auto rounded-t-lg flex items-center justify-between"
+			>
+				<div class="w-2/3 leading-snug text-balance">
+					Ready to elevate your business with AI? Get in touch with us today
+					to learn more about how our solutions can transform your
+					organization.
+				</div>
+
+				<div>&copy;2024 nxz.ai</div>
+			</div>
+		</footer>
+
+
+
+		<div id="popup" class="z-1000 fixed flex hidden items-center justify-center top-0 left-0 h-screen w-full">
+			<div class="popup-content
+			 p-8 relative
+			bg-dark-600 bg-opacity-90 rounded-2xl backdrop-blur-md h-80 w-2/3">
+				<button id="close-popup-btn" class="close-btn absolute right-8 top-8">X</button>
+				<form id="popup-form">
+					<input type="text" name="textbox" required />
+					<button type="submit" class="submit-btn">Submit</button>
+				</form>
+			</div>
+		</div>
+
+	</body>
+</html>
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const openPopupBtn = document.getElementById('open-popup-btn');
+    const closePopupBtn = document.getElementById('close-popup-btn');
+    const popup = document.getElementById('popup');
+    const form = document.getElementById('popup-form');
+
+    openPopupBtn.addEventListener('click', () => {
+      popup.classList.remove('hidden');
+    });
+
+    closePopupBtn.addEventListener('click', () => {
+      popup.classList.add('hidden');
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const textboxValue = form.textbox.value;
+      console.log('Form submitted with:', textboxValue);
+      popup.classList.remove('active');
+    });
+  });
+</script>
+
+
+
