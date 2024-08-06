@@ -18,21 +18,30 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<div class="landing h-screen flex flex-col">
-			<nav
-				class="sticky top-0 flex justify-center gap-8 py-6 text-lg text-primary backdrop-blur-lg z-50"
+		<div class="landing h-screen flex max-sm:items-center">
+			<!-- <nav
+				class="sticky top-0 flex justify-center gap-8 py-6 text-lg text-primary backdrop-blur-lg z-10"
 			>
 				<div class="hover:text-white duration-200">Home</div>
 				<div class="hover:text-white duration-200">About</div>
 				<div class="hover:text-white duration-200">Services</div>
 				<div class="hover:text-white duration-200">Blog</div>
 				<div class="hover:text-white duration-200">Contact</div>
-			</nav>
+			</nav> -->
 
-			<div class="hero grow flex container mx-auto">
+			<div class="hero grow md:flex lg:flex-row-reverse container mx-auto p-8 max-lg:text-center">
 				
-				<div class="self-center w-1/2 ml-auto">
-					<div class="text-white text-6xl  animate-appear opacity-0">Leading the future</div>
+
+				<header class="py-4 self-center mr-auto">
+					<div class="font-logo text-8xl lg:text-9xl logo text-white animate-appear200 opacity-0">
+						N<span class="text-accent">X</span>Z
+					</div>
+				</header>
+
+
+				<div class="self-center lg:w-1/2 ml-auto">
+					<div class="text-white text-6xl  animate-appear opacity-0 hidden lg:block">Leading the future</div>
+					<div class="text-white text-6xl  animate-appear opacity-0 lg:hidden">The future</div>
 					<div class="text-accent text-6xl  animate-appear200 opacity-0">of AI Innovation</div>
 					<p class="text-lg mt-4 leading-relaxed text-balance  animate-appear400 opacity-0">
 						Transforming Businesses with Innovative AI Technologies for enhanced
@@ -50,11 +59,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 					</button>
 				</div>
 
-				<header class="py-4 self-center mr-auto">
-					<div class="font-logo text-9xl logo text-white animate-appear200 opacity-0">
-						N<span class="text-accent">X</span>Z
-					</div>
-				</header>
+				
 
 			</div>
 		</div>
@@ -83,7 +88,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			</div>
 		</div>
 
-	-->
+	
 		<footer class="p-4 bg-zinc-900">
 			<div
 				class="container mx-auto rounded-t-lg flex items-center justify-between"
@@ -97,18 +102,37 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				<div>&copy;2024 nxz.ai</div>
 			</div>
 		</footer>
+		-->
 
 
+		<div id="popup" class="z-1000 fixed flex hidden items-center justify-center top-0 left-0 h-screen w-full bg-black bg-opacity-80 z-20">
+			<div class="popup-content m-4
+			 p-16 relative flex items-center justify-center 
+			bg-dark-600 bg-opacity-90 rounded-2xl backdrop-blur-md min-h-80">
+				<button id="close-popup-btn" class="close-btn absolute right-8 top-8 w-5 h-5">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" fill="currentColor">
+						<path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+					</svg>
+				</button>
 
-		<div id="popup" class="z-1000 fixed flex hidden items-center justify-center top-0 left-0 h-screen w-full">
-			<div class="popup-content
-			 p-8 relative
-			bg-dark-600 bg-opacity-90 rounded-2xl backdrop-blur-md h-80 w-2/3">
-				<button id="close-popup-btn" class="close-btn absolute right-8 top-8">X</button>
-				<form id="popup-form">
-					<input type="text" name="textbox" required />
-					<button type="submit" class="submit-btn">Submit</button>
-				</form>
+				<div class="lg:flex gap-16 items-center justify-center">
+					<div class="max-w-[400px]">
+						<div class="text-5xl font-bold text-white mb-6">
+							Don't miss out
+						</div>
+						<p class="mb-6 leading-loose">
+							Stay up to date with latest stuff from us. We have quite a lot in the works, we will only send you emails related to our upcoming launches.
+						</p>
+					</div>
+					<form id="popup-form" class="mr-auto lg:max-w-[300px]">
+						<input type="email" name="textbox" 
+						placeholder="Your Email Address"
+						class="px-4 py-4 w-full text-black font-medium text-center placeholder-gray-500 outline-none border bg-gray-300 border-gray-300 rounded-lg focus:ring focus:ring-green-300" required />
+						<button type="submit" class="submit-btn mt-6 bg-accent text-black font-bold rounded-lg 
+							h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0
+						hover:bg-accentlight duration-200 text-lg w-full">Subscribe now</button>
+					</form>
+				</div>
 			</div>
 		</div>
 
