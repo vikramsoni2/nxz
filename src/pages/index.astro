@@ -117,9 +117,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 					</svg>
 				</button>
 
-				<div class="lg:flex gap-12 items-center justify-center">
+				<div class="newsletter-form lg:flex gap-12 items-center justify-center">
 
-					<div class="newsletter-form max-w-[400px]">
+					<div class="max-w-[400px]">
 						<div class="text-5xl  text-white mb-4">
 							Stay Informed<br/>
 							<span class="text-accent">Stay Inspired</span> 
@@ -128,7 +128,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 							Subscribe to our newsletter to receive the latest updates and insights from our AI experts be the first to know about our new products and services.
 						</p>
 					</div>
-					<form id="popup-form" class="newsletter-form  mr-auto lg:max-w-[300px]">
+					<form id="popup-form" class="mr-auto lg:max-w-[300px]">
 						<input type="hidden" name="nonce" />
 						<input id="c9869" type="checkbox" name="l" checked value="c98699e2-cce2-4530-9498-efae74af2c06" class="invisible"/>
 						<input type="email" name="email" 
@@ -138,21 +138,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 							h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0
 						hover:bg-accentlight duration-200 text-lg w-full">Subscribe Now</button>
 					</form>
-
-					<div class="newsletter-confirm hidden">
-						<div class="text-4xl font-bold text-white mb-4">
-							Its time to confirm your email
-						</div>
-						<p class="leading-loose">
-							Have we got your right email address to reach you on? Please click on the button below to confirm that you got our email.
-						</p>
-						<button id="confirm-email-btn" type="button" class="submit-btn mt-6 bg-accent text-black font-bold rounded-lg 
-							h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0
-						hover:bg-accentlight duration-200 text-lg px-8">Confirm Your Email</button>
-
+				</div>
+					
+				<div class="newsletter-confirm hidden">
+					<div class="text-4xl font-bold text-white mb-4">
+						Its time to confirm your email
 					</div>
+					<p class="leading-loose">
+						Have we got your right email address to reach you on? Please click on the button below to confirm that you got our email.
+					</p>
+					<button id="confirm-email-btn" type="button" class="submit-btn mt-6 bg-accent text-black font-bold rounded-lg 
+						h-12 mr-0 sm:mr-4 lg:mr-6 mb-2 sm:mb-0
+					hover:bg-accentlight duration-200 text-lg px-8">Confirm Your Email</button>
 
 				</div>
+
+				
 			</div>
 		</div>
 
@@ -224,7 +225,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         formDiv.classList.remove('hidden');
         confirmDiv.classList.add('hidden');
         form.reset();
-        document.querySelector('.popup-content').classList.add('hidden');
+        popup.classList.add('hidden');
     }
 
     
