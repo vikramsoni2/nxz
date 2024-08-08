@@ -200,11 +200,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			console.log(response);
 
             // if (response.ok) 
-			formDiv.classList.add('hidden');
+			formDiv.classList.add('!hidden');
 			confirmDiv.classList.remove('hidden');
             
         } catch (error) {
-            formDiv.classList.add('hidden');
+            formDiv.classList.add('!hidden');
             confirmDiv.classList.remove('hidden');
         }
     });
@@ -222,7 +222,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     });
 
     function resetPopup() {
-        formDiv.classList.remove('hidden');
+        formDiv.classList.remove('!hidden');
         confirmDiv.classList.add('hidden');
         form.reset();
         popup.classList.add('hidden');
