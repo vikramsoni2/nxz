@@ -196,14 +196,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
                 body: formData,
             });
 
-            if (response.ok) {
-                formDiv.classList.add('hidden');
-                confirmDiv.classList.remove('hidden');
-            } else {
-                alert('Subscription failed. Please try again.');
-            }
+			console.log(response);
+
+            // if (response.ok) 
+			formDiv.classList.add('hidden');
+			confirmDiv.classList.remove('hidden');
+            
         } catch (error) {
-            alert('An error occurred. Please try again.');
+            formDiv.classList.add('hidden');
+            confirmDiv.classList.remove('hidden');
         }
     });
 
