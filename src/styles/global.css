@@ -31,7 +31,7 @@ body {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(noise.png), radial-gradient(ellipse at top, #202021, transparent), radial-gradient(ellipse at bottom, #000, transparent);
+  background-image: url(noise.png), radial-gradient(ellipse at top, #21382e, transparent), radial-gradient(ellipse at bottom, #000, transparent);
   background-size: 200px, 100%, 200%;
   background-attachment: fixed;
 }
