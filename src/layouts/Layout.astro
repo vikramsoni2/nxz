@@ -1,0 +1,41 @@
+---
+// Supports weights 100-900
+import '@fontsource-variable/inter';
+import '@fontsource/saira-stencil-one';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-[#E5E7DF] relative">
+
+		
+
+		<nav class="flex items-center px-6 justify-end bg-[#E5E7DF] bg-opacity-50 backdrop-blur-md sticky top-0 border-b-neutral-600 border-b">
+			
+			<div class="font-logo text-4xl text-zinc-900 tracking-tight mr-auto">
+				N<span class="text-green-600">X</span>Z
+			</div>
+
+			<div class="p-4">Products</div>
+			<div class="p-4">Services</div>
+			<div class="p-4">Contact</div>
+		</nav>
+
+		<slot />
+	</body>
+</html>
+
