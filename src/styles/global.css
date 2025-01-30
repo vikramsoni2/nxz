@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 .gradient-text {
   @apply bg-clip-text  bg-radial-[at_40%_55%] from-zinc-400 from-30% to-white inline-block text-transparent ;
