@@ -60,7 +60,7 @@
 </section>
 
 <!-- Sticky Footer Lead Capture -->
-<div class="fixed bottom-0 left-0 right-0 bg-black backdrop-blur-sm border-t border-zinc-800 hidden" id="stickyLead">
+<!-- <div class="fixed bottom-0 left-0 right-0 bg-black backdrop-blur-sm border-t border-zinc-800 hidden" id="stickyLead">
   <div class="container max-w-7xl mx-auto px-4 py-4">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="text-center sm:text-left">
@@ -81,26 +81,26 @@
       </form>
     </div>
   </div>
-</div>
+</div> -->
 
 <script>
-  // Show sticky lead form after scrolling
-  window.addEventListener('scroll', function() {
-    const stickyLead = document.getElementById('stickyLead');
-    if (window.scrollY > 800) { // Adjust scroll threshold as needed
-      stickyLead.classList.remove('hidden');
-    } else {
-      stickyLead.classList.add('hidden');
-    }
-  });
+  // // Show sticky lead form after scrolling
+  // window.addEventListener('scroll', function() {
+  //   const stickyLead = document.getElementById('stickyLead');
+  //   if (window.scrollY > 800) { // Adjust scroll threshold as needed
+  //     stickyLead.classList.remove('hidden');
+  //   } else {
+  //     stickyLead.classList.add('hidden');
+  //   }
+  // });
 
-  // Handle form submission
-  document.getElementById('leadForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted!');
-    // Show success message
-    alert('Thank you! We will contact you shortly.');
-    this.reset();
-  });
+  // // Handle form submission
+  // document.getElementById('leadForm').addEventListener('submit', function(e) {
+  //   e.preventDefault();
+  //   // Add your form submission logic here
+  //   console.log('Form submitted!');
+  //   // Show success message
+  //   alert('Thank you! We will contact you shortly.');
+  //   this.reset();
+  // });
 </script>
