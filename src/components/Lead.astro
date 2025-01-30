@@ -1,0 +1,108 @@
+<!-- Lead Capture Section -->
+<section class="py-20 bg-zinc-900/40" id="contact">
+  <div class="container max-w-4xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">Start Your AI Transformation</h2>
+      <p class="text-zinc-400 max-w-xl mx-auto">
+        Schedule a free consultation to discover how AI can unlock new opportunities for your business.
+      </p>
+    </div>
+
+    <form class="space-y-6" id="leadForm">
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label class="block text-zinc-300 mb-2">Full Name</label>
+          <input type="text" 
+                 class="w-full bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3
+                        focus:border-green-300 focus:ring-2 focus:ring-green-300/20 outline-none transition"
+                 required>
+        </div>
+        <div>
+          <label class="block text-zinc-300 mb-2">Work Email</label>
+          <input type="email" 
+                 class="w-full bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3
+                        focus:border-green-300 focus:ring-2 focus:ring-green-300/20 outline-none transition"
+                 required>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-zinc-300 mb-2">Company</label>
+        <input type="text" 
+               class="w-full bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3
+                      focus:border-green-300 focus:ring-2 focus:ring-green-300/20 outline-none transition"
+               required>
+      </div>
+
+      <div>
+        <label class="block text-zinc-300 mb-2">How can we help?</label>
+        <textarea 
+          class="w-full bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3
+                 focus:border-green-300 focus:ring-2 focus:ring-green-300/20 outline-none transition h-32"
+          placeholder="Describe your AI challenges or goals..."
+        ></textarea>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button type="submit" 
+                class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full
+                       font-medium text-black bg-green-300 hover:bg-green-400
+                       transition-colors">
+          Schedule Consultation
+          <svg class="h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/>
+          </svg>
+        </button>
+        <p class="text-zinc-500 text-sm">
+          We'll respond within 24 hours. No spam ever.
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Sticky Footer Lead Capture -->
+<div class="fixed bottom-0 left-0 right-0 bg-zinc-900/95 backdrop-blur-sm border-t border-zinc-800 hidden" id="stickyLead">
+  <div class="container max-w-7xl mx-auto px-4 py-4">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-center sm:text-left">
+        <h3 class="text-zinc-100 font-medium">Ready to Transform Your Business with AI?</h3>
+        <p class="text-zinc-400 text-sm">Speak with our experts today</p>
+      </div>
+      <form class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+        <input type="email" 
+               placeholder="Enter your work email"
+               class="bg-zinc-800/50 border border-zinc-700 rounded-full px-6 py-2
+                      focus:border-green-300 focus:ring-2 focus:ring-green-300/20 outline-none transition text-sm"
+               required>
+        <button type="submit" 
+                class="px-6 py-2 rounded-full bg-green-300 text-black font-medium
+                       hover:bg-green-400 transition-colors text-sm">
+          Get Started
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Show sticky lead form after scrolling
+  window.addEventListener('scroll', function() {
+    const stickyLead = document.getElementById('stickyLead');
+    if (window.scrollY > 800) { // Adjust scroll threshold as needed
+      stickyLead.classList.remove('hidden');
+    } else {
+      stickyLead.classList.add('hidden');
+    }
+  });
+
+  // Handle form submission
+  document.getElementById('leadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Add your form submission logic here
+    console.log('Form submitted!');
+    // Show success message
+    alert('Thank you! We will contact you shortly.');
+    this.reset();
+  });
+</script>
