@@ -1,7 +1,12 @@
 ---
-import Openai from '../assets/openai.svg'
+import Openai from "../assets/openai.svg";
+import LlamaIndex from "../assets/llama_index.svg";
+import DeepSeek from "../assets/deepseek.svg";
+import LangChain from "../assets/langchain.svg";
+import Aws from "../assets/aws.svg";
+import Gcp from "../assets/gcp.svg";
+import Azure from "../assets/azure.svg";
 ---
-
 
 <div class="mb-40 content-center mx-8 sm:mx-4">
   <div class="container max-w-7xl mx-auto relative">
@@ -226,17 +231,51 @@ import Openai from '../assets/openai.svg'
           </li>
         </ul>
       </div>
+    </div>
 
-      <div class="mt-20 border-t border-zinc-700/50 pt-12">
-        <p class="text-zinc-400 text-center mb-8">Supported Technologies</p>
-        <div class="flex flex-wrap justify-center gap-6 opacity-75">
-          <div class="w-16 h-16 bg-zinc-700/30 rounded-lg">
-            <img src={Openai.src} alt="NXZ" fetchpriority="high" class="h-10 invert"/>
-          </div>
-          <div class="w-16 h-16 bg-zinc-700/30 rounded-lg"></div>
-          <div class="w-16 h-16 bg-zinc-700/30 rounded-lg"></div>
-          <div class="w-16 h-16 bg-zinc-700/30 rounded-lg"></div>
+    <div class="span-3 mt-20 border-t border-zinc-700/50 pt-12">
+      <p class="text-zinc-400 text-center mb-8">Working with Technologies</p>
+      <div class="flex flex-wrap justify-center gap-4
+      *:p-4 *:rounded-lg">
+        <div class=" bg-zinc-100">
+          <Openai
+            class="h-6"
+          />
         </div>
+
+        <div class=" bg-zinc-100">
+          <LlamaIndex
+            class="h-6 "
+          />
+        </div>
+
+        <div class=" bg-zinc-100">
+          <LangChain 
+            class="h-6 invert"
+          />
+        </div>
+
+        <div class=" bg-zinc-100">
+          <DeepSeek
+            class="h-6 text-[#4d6bfe]"
+          />
+        </div>
+
+        
+
+        <div class=" bg-zinc-100">
+          <Aws
+            
+            class="h-6"
+          />
+        </div>
+
+        <div class=" bg-zinc-100">
+          <Gcp
+            class="h-6"
+          />
+        </div>
+        
       </div>
     </div>
   </div>
