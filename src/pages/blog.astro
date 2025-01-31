@@ -1,4 +1,88 @@
 ---
+import Layout from "../layouts/Layout.astro";
+
+// src/components/BlogList.astro
+// import ArrowDiagonal from "../assets/ArrowDiagonal.astro";
+
+// const { posts, pinnedPosts } = Astro.props;
+
+// import BlogPost from '../components/BlogPost.astro';
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+
+---
+<Layout>
+<div class="py-20 sm:py-32 bg-[#0C1015]">
+  <div class="container max-w-7xl mx-auto px-4">
+    <!-- Pinned Posts -->
+    <div class="mb-20">
+      <h2 class="text-3xl sm:text-4xl text-teal-300 mb-8">Featured Insights</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        {allPosts.map(post => (
+          <article class="group relative bg-zinc-900/50 hover:bg-zinc-900/70 transition-colors p-8 rounded-2xl border border-zinc-800">
+            <div class="mb-4">
+              {/* {post.tags.map(tag => (
+                <span class="text-xs font-medium text-teal-300/80 mr-2">#{tag}</span>
+              ))} */}
+            </div>
+            <h3 class="text-2xl sm:text-3xl text-zinc-100 mb-4">{post.title}</h3>
+            <p class="text-zinc-400 mb-6">{post.description}</p>
+            <a href={`/blog/${post.slug}`} class="inline-flex items-center text-teal-300 hover:text-teal-400 transition-colors">
+              Read Article
+              {/* <ArrowDiagonal class="ml-2 w-4 h-4" /> */}
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Recent Posts -->
+    <div>
+      <h2 class="text-3xl sm:text-4xl text-zinc-100 mb-8">Latest Updates</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {allPosts.map(post => (
+          <article class="group">
+            <div class="aspect-video bg-zinc-800 rounded-xl mb-6 overflow-hidden">
+              <img src="" alt={post.title} class="w-full h-full object-cover transition-transform group-hover:scale-105" />
+            </div>
+            <div class="mb-4 flex items-center text-sm text-zinc-500">
+              <span>{post.pubDate}</span>
+              <span class="mx-2">•</span>
+              <span>{post.author} read</span>
+            </div>
+            <h3 class="text-xl text-zinc-100 mb-3">{post.title}</h3>
+            <p class="text-zinc-400 mb-4">{post.description}</p>
+            <a href={`/blog/${post.slug}`} class="inline-flex items-center text-teal-300 hover:text-teal-400 transition-colors">
+              Read More
+              {/* <ArrowDiagonal class="ml-2 w-4 h-4" /> */}
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+</Layout>
+<style>
+  .prose {
+    max-width: 100%;
+  }
+  .prose :where(h2):not(:where([class~="not-prose"] *)) {
+    color: #fafafa;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .prose :where(p):not(:where([class~="not-prose"] *)) {
+    color: #a1a1aa;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+</style>
+
+
+<!--
+---
 import BlogPost from '../components/BlogPost.astro';
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 
@@ -20,4 +104,4 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
       {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
   </ul>
   </body>
-</html>
+</html> -->
