@@ -3,7 +3,7 @@ import Logo from '../assets/logo.jpeg';
 ---
 
 <div id="header">
-  <div class="py-4 px-8 flex items-center justify-between space-x-4">
+  <div class="py-4 px-8 flex items-start justify-between space-x-4">
 
     <div class="flex gap-4 items-center">
       <img id="logo" src={Logo.src} alt="NXZ" fetchpriority="high" class="h-10"/>
@@ -12,11 +12,12 @@ import Logo from '../assets/logo.jpeg';
     
 
     <nav>
-      <ul class="flex space-x-6 text-zinc-300">
+      <ul class="flex sm:space-x-6 
+      max-sm:flex-col max-sm:text-end
+      *:text-zinc-300 *:hover:text-teal-300 *:transition-colors">
         <li><a href="/">Home</a></li>
         <li><a href="#">About</a></li>
-
-        <li><a href="#">Blog</a></li> 
+        <!-- <li><a href="#">Blog</a></li>  -->
         <li><a href="/contact">Contact</a></li> 
       </ul>
     </nav>
