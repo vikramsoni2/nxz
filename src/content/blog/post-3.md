@@ -1,7 +1,7 @@
 ---
 title: My Third Blog Post
 author: Astro Learner
-pubDate: 'Jul 08 2022'
+publishDate: 01 Dec 2021
 description: "I had some challenges, but asking in the community really helped!"
 image:
     url: "https://docs.astro.build/assets/rays.webp"

@@ -2,17 +2,26 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-const { pageTitle = SITE_TITLE, pageDescription = SITE_DESCRIPTION } = Astro.props;
+
+
+export interface Props {
+  title?: string;
+  description?: string;
+  permalink?: string;
+  current?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, permalink, current } = Astro.props;
+
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={pageTitle} description={pageDescription} />
+		<BaseHead title={title} description={description} permalink={permalink} />
 	</head>
 	<body class="bg-[#0C1015] text-zinc-100 px-8 xl:px-4">
 		<!-- Glow Effects -->

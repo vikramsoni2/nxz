@@ -1,7 +1,7 @@
 ---
 title: My Second Blog Post
 author: Astro Learner
-pubDate: 'Jul 08 2022'
+publishDate: 01 Dec 2021
 description: "After learning some Astro, I couldn't stop!"
 image:
     url: "https://docs.astro.build/assets/arc.webp"
