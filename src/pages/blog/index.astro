@@ -7,35 +7,58 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Layout from "../../layouts/Layout.astro";
 
+const permalink = `${Astro.site?.href}/blog`;
 
-const permalink = `${Astro.site.href}blog`;
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
-
 ---
 
 <Layout permalink={permalink} current="blog">
-  <div class="container max-w-7xl mx-auto px-4">
-  <section>
-    <ul>
-      {posts.map((post, index) => {
-        const href = `/blog/${post.id.split('.').shift()}`;
-        return (
-          
-          <li>
-            <a href={href}>
-              {/* <img width={720} height={360} src={post.data.heroImage} alt="" /> */}
-              <h4 class="title">{post.data.title}</h4>
-              <p class="date">
-                <FormattedDate date={post.data.publishDate}/>
+  <div class="container max-w-2xl mx-auto px-4">
+    <main>
+      <section aria-labelledby="blog-list">
+        <h2 class="text-4xl font-medium mb-10">NXZ Blog</h2>
+        <div class="divide-y divide-zinc-800 *:py-10">
+
+        {posts.map((post, index) => {
+          const href = `/blog/${post.id.split(".").shift()}`;
+          return (
+          <article class="group">
+            <a class="block" href={href}>
+              <h3
+                class="font-bold text-2xl
+                  group-hover:text-white group-hover:underline mb-1"
+              >
+                {post.data.title}
+              </h3>
+              <p class="text-sm italic text-zinc-400">
+                <time datetime="2024-02-01"><FormattedDate date={post.data.publishDate} /></time>
+                <span class="text-zinc-500 mx-2"> &mdash;</span>
+                <span class=" post-read-time text-sky-500 mb-4">4 min read</span>
+              </p>
+
+              <p class="text-lg text-zinc-300 mt-4">
+                {post.data.description}
               </p>
             </a>
-          </li>
-        )
-      })}
-    </ul>
-  </section>
-</div>
+
+            <ul class="flex mt-4 gap-2 text-zinc-400 text-sm flex-wrap">
+              <li class="bg-zinc-600/30 border border-zinc-700 px-3 py-[2px] rounded-full">
+                <a href="/blog/tag/ai">News</a>
+              </li>
+              <li class="bg-zinc-600/30 border border-zinc-700 px-3 py-[2px] rounded-full">
+                <a href="/blog/tag/nlp">LLM</a>
+              </li>
+              <li class="bg-zinc-600/30 border border-zinc-700 px-3 py-[2px] rounded-full">
+                <a href="/blog/tag/nlp">Deep Learning</a>
+              </li>
+            </ul>
+          </article>);
+          })
+        }
+        </div>
+      </section>
+    </main>
+  </div>
 </Layout>
