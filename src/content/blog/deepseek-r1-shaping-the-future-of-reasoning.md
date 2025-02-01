@@ -3,6 +3,7 @@ title: 'DeepSeek R1: Shaping the Future of Reasoning'
 description: 'DeepSeek R1 stands out as an advanced reasoning model designed to excel in logical inference, mathematical problem-solving, and real-time decision-making. Unlike many large language models (LLMs) that focus on language understanding, DeepSeek R1 emphasizes reasoning-centric tasks, making it a game-changer for developers and researchers.'
 slug: deepseek-r1-shaping-the-future-of-reasoning
 publishDate: 2025-01-31T18:22:01.000Z
+tags: ['GenAI', 'LLM', 'Deepseek']
 ---
 
 
