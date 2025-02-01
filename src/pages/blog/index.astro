@@ -22,7 +22,7 @@ const posts = (await getCollection("blog")).sort(
         <div class="divide-y divide-zinc-800 *:py-10">
 
         {posts.map((post, index) => {
-          const href = `/blog/${post.id.split(".").shift()}`;
+          const href = `/blog/${post.id}`;
           return (
           <article class="group">
             <a class="block" href={href}>
