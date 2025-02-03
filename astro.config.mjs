@@ -18,6 +18,11 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss(), basicSsl()],
+    resolve: {
+      alias: {
+        '@': '/src',
+      }
+    },
     server: {
       https: true,
     },
