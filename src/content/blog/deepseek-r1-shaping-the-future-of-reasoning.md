@@ -4,6 +4,8 @@ description: 'DeepSeek R1 stands out as an advanced reasoning model designed to 
 slug: deepseek-r1-shaping-the-future-of-reasoning
 publishDate: 2025-01-31T18:22:01.000Z
 tags: ['GenAI', 'LLM', 'Deepseek']
+readingTime: 3
+heroImage: /agents.avif
 ---
 
 

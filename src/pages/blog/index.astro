@@ -34,8 +34,12 @@ const posts = (await getCollection("blog")).sort(
               </h3>
               <p class="text-sm italic text-zinc-400">
                 <time datetime="2024-02-01"><FormattedDate date={post.data.publishDate} /></time>
-                <span class="text-zinc-500 mx-2"> &mdash;</span>
-                <span class=" post-read-time text-sky-500 mb-4">4 min read</span>
+                {post.data.readingTime && (
+                  <>
+                    <span class="text-zinc-500 mx-2"> &mdash;</span>
+                    <span class="post-read-time text-sky-500 mb-4">{post.data.readingTime} mins read</span>
+                  </>
+                )}
               </p>
 
               <p class="text-lg text-zinc-300 mt-4">

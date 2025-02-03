@@ -3,6 +3,7 @@ title: 'Welcome'
 description: 'Thank you for visiting the NXZ.AI Blog. We look forward to helping you unlock new opportunities and drive innovation through the power of artificial intelligence'
 publishDate: 2025-01-01T10:22:01.000Z
 tags: ['success']
+readingTime: 1
 ---
 
 ## Welcome to the NXZ.AI Blog!
